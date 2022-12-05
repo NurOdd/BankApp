@@ -1,11 +1,22 @@
 package com.ironhack.BankingAccount.Account;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
-public class Checking {
-    private long id;
+public class Checking  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private int balance;
     private int SecretKey;
     private String PrimaryOwner;
@@ -16,5 +27,6 @@ public class Checking {
     private int creationDate;
     private Status status;
 
+    private List<Checking> checking;
 
 }
