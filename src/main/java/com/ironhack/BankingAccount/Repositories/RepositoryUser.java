@@ -1,6 +1,6 @@
 package com.ironhack.BankingAccount.Repositories;
 
-import com.ironhack.BankingAccount.Account.Checking;
+import com.ironhack.BankingAccount.Entities.Account.Checking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

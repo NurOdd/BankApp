@@ -1,4 +1,4 @@
-package com.ironhack.BankingAccount.Users;
+package com.ironhack.BankingAccount.Entities.Users;
 
 public class ThirdParty extends User {
     private String hashedKey;
