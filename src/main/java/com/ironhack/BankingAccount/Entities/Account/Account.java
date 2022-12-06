@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@Inheritance (strategy = InheritanceType.JOINED)
 @Data
 public abstract class Account {
 
@@ -44,6 +45,10 @@ public abstract class Account {
 
     public Account() {
     }
+
+    // TODO  if (after transactionMethod is used  && balance < minimumBalance) { apply PenaltyFeeMethod)
+    //TODO PenaltyfeeMethod ={banlace - penaltyFee == new Balance}
+
 
 
 }

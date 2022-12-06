@@ -2,6 +2,8 @@ package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -10,33 +12,47 @@ import java.time.LocalDate;
 @Entity
 public class Savings extends Account{
 
+
+    @DecimalMin(value = "100")
+    @DecimalMax(value = "1000")
     private BigDecimal minimumBalance = new BigDecimal( 1000);
-    private BigDecimal interestRate = new BigDecimal(0.0025);
+
+    @DecimalMax(value = "0.5")
+    private BigDecimal interestRate;
 
     public Savings(BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, BigDecimal penaltyFee, String secretKey, BigDecimal minimumBalance, BigDecimal interestRate) {
         super(balance, primaryOwner, secondaryOwner, penaltyFee, secretKey);
-        this.minimumBalance = minimumBalance;
-        this.interestRate = interestRate;
+      setMinimumBalance(minimumBalance);
+       setInterestRate(interestRate);
     }
 
           public Savings() {
 
     }
-
+//balance must be min 100 =><= 1000
     public void setMinimumBalance(BigDecimal minimumBalance) {
+        if (minimumBalance == null){
+            this.minimumBalance = new BigDecimal(1000);
+            return;
+        }
 
         this.minimumBalance = minimumBalance;
 
     }
 
+    // interest rate max =< 0.5
     public void setInterestRate(BigDecimal interestRate) {
+        if(interestRate == null){
+            this.interestRate = new BigDecimal(0.0025);
+            return;
+        }
         this.interestRate = interestRate;
-
     }
 
+    /*
 
-    /*TODO interest rate max =< 0.5
-    TODO balance must be min !< 100 =< 1000
+
+    TODO
 
 Interest on savings accounts is added to the
  account annually at the rate of specified interestRate per year.
@@ -46,7 +62,7 @@ Interest on savings accounts is added to the
    either the account was created or ¿|since interest was added to the account|?,
    and add the appropriate interest to the balance if necessary.
 
-esto es para metodo ApplyInterestSavings:
+TODO esto es para metodo ApplySavingsInterest:
 1ra condicion: LocalDate dd/mm/yyyy + 1y =< true
 if (1rC = true) {
 interestRate*balance= interestGenerated;  interestGenerated+balance = new balance
