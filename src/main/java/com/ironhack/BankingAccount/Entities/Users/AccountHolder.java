@@ -1,9 +1,11 @@
 package com.ironhack.BankingAccount.Entities.Users;
 
+import java.util.Date;
+
 public class AccountHolder extends User{
 
 
-    private int DateOfBirth;
+    private final Date DateOfBirth = new Date();
 
     //primaryAdress should be a separate adress class?
     private String primaryAdress;
@@ -11,21 +13,17 @@ public class AccountHolder extends User{
     private String mailingAdress;
 
 
-    public AccountHolder(String name, int dateOfBirth, String primaryAdress, String mailingAdress) {
+    public AccountHolder(String name, String primaryAdress, String mailingAdress) {
         super(name);
-        DateOfBirth = dateOfBirth;
         this.primaryAdress = primaryAdress;
         this.mailingAdress = mailingAdress;
     }
 
-    public AccountHolder(){}
-
-    public int getDateOfBirth() {
-        return DateOfBirth;
+    public AccountHolder() {
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
-        DateOfBirth = dateOfBirth;
+    public Date getDateOfBirth() {
+        return DateOfBirth;
     }
 
     public String getPrimaryAdress() {

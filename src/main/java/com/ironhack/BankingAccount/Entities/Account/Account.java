@@ -24,24 +24,25 @@ public abstract class Account {
 
    @ManyToOne
     private AccountHolder secondaryOwner;
-    private int penaltyFee;
+    private BigDecimal penaltyFee = new BigDecimal(40) ;
 
     /*Agrego además para facilitar cosas a posteriori
     class creationDate, SecretKey, Status y ID */
 
     private String secretKey;
-    private Status status;
-    private LocalDate creationDate;
+    private Status status = Status.ACTIVE;
+    private final LocalDate creationDate = LocalDate.now();
 
-    public Account(Long id, BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, int penaltyFee, String secretKey, Status status, LocalDate creationDate) {
-        this.id = id;
+    public Account( BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, BigDecimal penaltyFee, String secretKey) {
         this.balance = balance;
         this.primaryOwner = primaryOwner;
         this.secondaryOwner = secondaryOwner;
         this.penaltyFee = penaltyFee;
         this.secretKey = secretKey;
-        this.status = status;
-        this.creationDate = creationDate;
+
+    }
+
+    public Account() {
     }
 
 

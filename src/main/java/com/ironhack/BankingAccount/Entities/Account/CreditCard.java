@@ -1,37 +1,36 @@
 package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
-import lombok.Data;
-
+import jakarta.persistence.Entity;
+import lombok.Getter;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
+@Getter
+@Entity
+public class CreditCard extends Account {
 
-public class CreditCard extends Account{
+    private BigDecimal creditLimit= new BigDecimal(100);
+    private BigDecimal interestRate = new BigDecimal(0.2);
 
-    private int creditLimit;
-    private int interestRate;
-
-
-    public CreditCard(Long id, BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, int penaltyFee, String secretKey, Status status, LocalDate creationDate, int creditLimit, int interestRate) {
-        super(id, balance, primaryOwner, secondaryOwner, penaltyFee, secretKey, status, creationDate);
+    public CreditCard(BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, BigDecimal penaltyFee, String secretKey, BigDecimal creditLimit, BigDecimal interestRate) {
+        super(balance, primaryOwner, secondaryOwner, penaltyFee, secretKey);
         this.creditLimit = creditLimit;
         this.interestRate = interestRate;
     }
-//TODO ¿se pueden hacer un constructo vacio sin los elemmentos del super?
-    public int getCreditLimit() {
-        return creditLimit;
+
+    public CreditCard() {
     }
 
-    public void setCreditLimit(int creditLimit) {
+//TODO creditLimit  100 =<>= 100000
+    public void setCreditLimit(BigDecimal creditLimit) {
         this.creditLimit = creditLimit;
     }
 
-    public int getInterestRate() {
-        return interestRate;
-    }
 
-    public void setInterestRate(int interestRate) {
+//TODO interestRate 0.1=<>=0.2
+    public void setInterestRate(BigDecimal interestRate) {
         this.interestRate = interestRate;
     }
+
+
 }

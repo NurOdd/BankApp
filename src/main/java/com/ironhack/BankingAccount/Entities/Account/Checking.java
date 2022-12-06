@@ -1,43 +1,31 @@
 package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
+import jakarta.persistence.Entity;
+import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
 
 
-//TODO ¿Seria tambien un Entity?
+
+@Entity
+@Data
 public class Checking extends Account {
 
-    private int minimumBalance;
+    private BigDecimal minimumBalance = new BigDecimal(250);
 
-    private int monthlyMaintanceFee;
+    private BigDecimal monthlyMaintanceFee = new BigDecimal(12);
 
-//TODO ¿Se puede hacer constructo vacio sin el super? mismo q resto de cuentas
-    public Checking(Long id, BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, int penaltyFee, String secretKey, Status status, LocalDate creationDate) {
-        super(id, balance, primaryOwner, secondaryOwner, penaltyFee, secretKey, status, creationDate);
-    }
 
-    public Checking(Long id, BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, int penaltyFee, String secretKey, Status status, LocalDate creationDate, int minimumBalance, int monthlyMaintanceFee) {
-        super(id, balance, primaryOwner, secondaryOwner, penaltyFee, secretKey, status, creationDate);
+    public Checking(BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, BigDecimal penaltyFee, String secretKey, BigDecimal minimumBalance, BigDecimal monthlyMaintanceFee) {
+        super(balance, primaryOwner, secondaryOwner, penaltyFee, secretKey);
         this.minimumBalance = minimumBalance;
         this.monthlyMaintanceFee = monthlyMaintanceFee;
     }
 
-    public int getMinimumBalance() {
-        return minimumBalance;
+    public Checking() {
     }
 
-    public void setMinimumBalance(int minimumBalance) {
-        this.minimumBalance = minimumBalance;
-    }
 
-    public int getMonthlyMaintanceFee() {
-        return monthlyMaintanceFee;
-    }
 
-    public void setMonthlyMaintanceFee(int monthlyMaintanceFee) {
-        this.monthlyMaintanceFee = monthlyMaintanceFee;
-    }
 }

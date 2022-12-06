@@ -1,17 +1,19 @@
 package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
+import jakarta.persistence.Entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
 public class StudentChecking extends Account {
-//TODO revisar el constructor
-    public StudentChecking(Long id, BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, int penaltyFee, String secretKey, Status status, LocalDate creationDate) {
-        super(id, balance, primaryOwner, secondaryOwner, penaltyFee, secretKey, status, creationDate);
+
+    public StudentChecking(BigDecimal balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, BigDecimal penaltyFee, String secretKey) {
+        super(balance, primaryOwner, secondaryOwner, penaltyFee, secretKey);
     }
 
-
-
+    public StudentChecking() {
+    }
 
 }

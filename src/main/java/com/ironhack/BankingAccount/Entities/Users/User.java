@@ -12,6 +12,9 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+
+    //TODO podria hacer final el Name pero que pasará con aquellos usuarios que cambien de nombre?
+    //se q no es lo habitual, pero como dejar la puerta abierta? podria llegar a modificarlo el admin?
     private String Name;
 
     public User(String name) {
@@ -28,4 +31,9 @@ public abstract class User {
     public void setName(String name) {
         Name = name;
     }
+
+
+
+
+
 }
