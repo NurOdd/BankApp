@@ -14,6 +14,8 @@ public class Admin extends User {
 /*
 TODO metodo createAccount
 switch bw Checking / Savings / CreditCard
+
+crear 3 rutas distintas
 if option Checking & (primaryOwner.Age < 24) get StudentCheckingConstructor,
 else get CheckingConstructor
 
@@ -26,16 +28,17 @@ access by account && access by user? (search by users (display accounts of the s
 (search by account id)
 
 
-TODO Admin must add Third-party Users
+
 
 TODO find a way to get some display of changes in balance
 
 
-terminal for admin:
+TODO terminal for admin:
 
--createAccounts
--Add 3roartyUser to database
+-createAccounts (3 routes) >done
+-Add 3roPartyUser to database
 -Access accounts > modify balance
+-delete accounts
 
 
 

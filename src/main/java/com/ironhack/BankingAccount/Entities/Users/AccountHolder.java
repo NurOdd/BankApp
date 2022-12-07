@@ -1,11 +1,14 @@
 package com.ironhack.BankingAccount.Entities.Users;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class AccountHolder extends User{
 
 
-    private final Date DateOfBirth = new Date();
+    private final LocalDate DateOfBirth = LocalDate.now();
+
+
 
     //TODO private int Age = DateofBirth - LocalDate (.year?)
 
@@ -14,6 +17,12 @@ public class AccountHolder extends User{
     // mailing Address is optional
     private String mailingAdress;
 
+    /*
+    * @one to many (mappedby primaryOwner
+    * privateList account primaryaccount = new ArrayList
+    * by anna( veure si implementar, es per tenir la llsita de comptes vinculata a unic user)
+    *
+    * */
 
     public AccountHolder(String name, String primaryAdress, String mailingAdress) {
         super(name);
@@ -24,7 +33,7 @@ public class AccountHolder extends User{
     public AccountHolder() {
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return DateOfBirth;
     }
 
