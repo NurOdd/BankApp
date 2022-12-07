@@ -61,7 +61,7 @@ public class CreditCard extends Account {
     *
     *  TODO ApplyCardInterest method
     *  interestRate / 12 = interestMonthly //  interestMonthly*balance =interestGeneerated
-    * TODO interestGenerated+ balance = new Balance
+    *  interestGenerated+ balance = new Balance
     *
     *
     */

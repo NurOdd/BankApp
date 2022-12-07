@@ -15,10 +15,16 @@ public class BankingAcoountNurApplication {
 
 
 /* TODO pending:
->validaciones bien de cada uno de los elementos
+>validaciones bien de cada uno de los elementos > hecho, pedir revision para q todo OK
 >revisar logicas (de validación + metodos)
 >mirar como funcionan los testeos para incorporados
->repository
+>repositorios
+==miercoles ==
+>funcionalidades
+>transferencias/creacion de cuentas/accesos y modificacion de balance
+
+
+
  */
 
 

@@ -1,6 +1,7 @@
 package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
+import com.ironhack.BankingAccount.Enum.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -47,7 +48,7 @@ public abstract class Account {
     }
 
     // TODO  if (after transactionMethod is used  && balance < minimumBalance) { apply PenaltyFeeMethod)
-    //TODO PenaltyfeeMethod ={banlace - penaltyFee == new Balance}
+    // PenaltyfeeMethod ={banlace - penaltyFee == new Balance}
 
 
 
