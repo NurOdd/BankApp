@@ -11,7 +11,7 @@ public abstract class User {
 
     private Long id;
 
-    //TODO podria hacer final el Name pero que pasará con aquellos usuarios que cambien de nombre?
+
     //se q no es lo habitual, pero como dejar la puerta abierta? podria llegar a modificarlo el admin?
     private String Name;
 

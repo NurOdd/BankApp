@@ -14,7 +14,7 @@ class BankingAcoountNurApplicationTests {
 
 	@Test
 	void createAdmin() {
-		Admin admin = new Admin("asd")
+		Admin admin = new Admin("")
 	}
 
 }

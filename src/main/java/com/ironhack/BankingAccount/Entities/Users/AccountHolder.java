@@ -79,9 +79,9 @@ Account holders should be able to transfer money from any of their
  the id of the account that should receive the transfer.
 
 
-terminal for AccountHolders:
->access account [display info]
->transfer money
+TODO terminal for AccountHolders:
+>access account [display info] > controler a revisar
+>transfer money> controler a revisar
 
 
 

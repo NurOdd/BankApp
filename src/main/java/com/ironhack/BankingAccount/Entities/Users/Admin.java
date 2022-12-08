@@ -36,9 +36,9 @@ TODO find a way to get some display of changes in balance
 TODO terminal for admin:
 
 -createAccounts (3 routes) >done
--Add 3roPartyUser to database
+-Add 3roPartyUser to database> controler done, falta logic
 -Access accounts > modify balance
--delete accounts
+-delete accounts>
 
 
 

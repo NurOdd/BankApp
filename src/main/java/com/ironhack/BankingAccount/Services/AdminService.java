@@ -12,20 +12,21 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Optional;
 
 @Service
 public class AdminService {
 
     @Autowired
     RepoAccountHolder repoAccountHolder;
-
-    public Account createChecking(Account account, Long id) {
+//TODO modificar el checking y los pedidos
+    public Account createChecking(Checking checking) {
         if(repoAccountHolder.findById(id).isPresent()){
      AccountHolder user = repoAccountHolder.findById(id).get(); // guarda la variable
         Period intervalPeriod = Period.between(user.getDateOfBirth(), LocalDate.now());
 
       if (intervalPeriod.getYears() <24){
-         StudentChecking studentChecking = new StudentChecking(account.getBalance(),account.getSecretKey(), account.getPrimaryOwner(), account.getSecondaryOwner());
+         StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getSecretKey(), account.getPrimaryOwner(), account.getSecondaryOwner());
         //user.getPrimaryAccount List().add(checking);
           RepoAccountHolder.save(user);
           RepoAccount.save(studentChecking);
