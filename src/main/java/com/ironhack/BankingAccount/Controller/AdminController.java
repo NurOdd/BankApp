@@ -49,25 +49,23 @@ return adminService.createChecking(checking);
         return adminService.createThirdParty(user);
     }
 
-// Ruta para acceder a las cuentas (abrir dos opciones [modifyBalance][deleteAccount]
-    //para hacerlo mirar de coger o bien por id de l'account>para uno directamente, o por id del user (devolver lista de accounts vinculadas a este)
-    @GetMapping("/accessAccount")
-    @ResponseStatus(HttpStatus.OK)
-    public Account account(@RequestBody Account Account){
-        return null; ///display de la info
-    }
-
-    @PostMapping("modifyBalance")
-@ResponseStatus(HttpStatus.ACCEPTED)
-    public Account account.balance(){
-        return adminService.modifyBalance(account, userId, balance);
-    }
-
+    //Ruta para destruir Account (agregado opcion en caso de que dicha cuenta no exista)
     @PostMapping("deleteAccount")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Account account(){
-        return adminService.deleteAccount(account, userId, accountId);
+    public Account accountDelete(@RequestParam Long accountId){
+        return adminService.deleteAccount(accountId);
     }
+
+
+// TODO Ruta para acceder a las cuentas modifyBalance
+//
+    @PostMapping("/modifyBalance")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Account accountModifyBalance(@RequestParam Long accountId){
+            return adminService.modifyBalance(account, userId, balance);        };
+    }
+
+
 
 
 }
