@@ -1,11 +1,11 @@
 package com.ironhack.BankingAccount.Services;
 
 
-import com.ironhack.BankingAccount.Entities.Account.Account;
-import com.ironhack.BankingAccount.Entities.Account.Checking;
-import com.ironhack.BankingAccount.Entities.Account.StudentChecking;
+import com.ironhack.BankingAccount.Entities.Account.*;
+import com.ironhack.BankingAccount.Entities.Users.User;
 import com.ironhack.BankingAccount.Methods.Repositories.RepoAccounts.RepoAccount;
 import com.ironhack.BankingAccount.Methods.Repositories.RepoUsers.RepoAccountHolder;
+import com.ironhack.BankingAccount.Methods.Repositories.RepoUsers.RepoUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +22,8 @@ public class AdminService {
     @Autowired
     RepoAccount repoAccount;
 
+    @Autowired
+    RepoUser repoUser;
 //TODO modificar el checking y los pedidos
 
 
@@ -49,13 +51,25 @@ public class AdminService {
         }
     }
 
+    public Account createSavings(Savings savings) {
+        repoAccount.save(savings);
+        return savings;
+    }
 
-    public Account createCreditCard(Account account, Long userId) {
+
+    public Account createCreditCard(CreditCard creditCard) {
+        repoAccount.save(creditCard);
+        return creditCard;
+    }
+
+
+    public User createThirdParty(User user) {
+        repoUser.save(user);
         return null;
     }
+    
 
 
-    public Account createThirdParty(Account account, Long userId) {
-        return null;
-    }
-    }
+
+
+}
