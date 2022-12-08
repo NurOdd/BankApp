@@ -1,8 +1,7 @@
 package com.ironhack.BankingAccount;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
-import com.ironhack.BankingAccount.Repositories.RepoUsers.RepoAccountHolder;
-import com.ironhack.BankingAccount.Services.AccountHolderService;
+import com.ironhack.BankingAccount.Methods.Repositories.RepoUsers.RepoAccountHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

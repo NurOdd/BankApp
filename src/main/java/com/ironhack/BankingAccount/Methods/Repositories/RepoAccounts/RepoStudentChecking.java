@@ -1,4 +1,4 @@
-package com.ironhack.BankingAccount.Repositories.RepoAccounts;
+package com.ironhack.BankingAccount.Methods.Repositories.RepoAccounts;
 
 import com.ironhack.BankingAccount.Entities.Account.StudentChecking;
 import org.springframework.data.jpa.repository.JpaRepository;

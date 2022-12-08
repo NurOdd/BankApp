@@ -1,14 +1,11 @@
 package com.ironhack.BankingAccount.Controller;
 
-
 import com.ironhack.BankingAccount.Entities.Account.Account;
+import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
 import com.ironhack.BankingAccount.Services.AccountHolderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AccountHolderController {
@@ -19,10 +16,12 @@ public class AccountHolderController {
 
     //Ruta para acceder a las cuentas del usuario
 
- @PostMapping("/accessAccount")
+ @GetMapping("/accessAccount")
  @ResponseStatus(HttpStatus.ACCEPTED)
- public Account account(@RequestBody Long userId){
-     return null; // TODO display data of account
+ public AccountHolder accessAccount(@RequestParam Long userId){
+
+     return accountHolderService.accessAccount(userId);
+
  }
 
 

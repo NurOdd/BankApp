@@ -9,7 +9,7 @@ public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long id;
+    private Long userId;
 
 
     //se q no es lo habitual, pero como dejar la puerta abierta? podria llegar a modificarlo el admin?

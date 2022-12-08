@@ -3,6 +3,7 @@ package com.ironhack.BankingAccount.Controller;
 
 
 import com.ironhack.BankingAccount.Entities.Account.Account;
+import com.ironhack.BankingAccount.Entities.Account.Checking;
 import com.ironhack.BankingAccount.Services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,8 @@ public class AdminController {
     @PostMapping("/createChecking")
     @ResponseStatus(HttpStatus.CREATED)
     //TODO del @RequestBody tienen que ser todos los parametros necesarios?
-    public Account createChecking(@RequestBody Account account, @RequestParam Long userId) {
-return adminService.createChecking(account, userId);
+    public Account createChecking(@RequestBody Checking checking) {
+return adminService.createChecking(checking);
     }
 
 

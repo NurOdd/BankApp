@@ -1,7 +1,7 @@
 package com.ironhack.BankingAccount.Entities.Account;
 
 import com.ironhack.BankingAccount.Entities.Users.AccountHolder;
-import com.ironhack.BankingAccount.Enum.Status;
+import com.ironhack.BankingAccount.Services.Enum.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public abstract class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long id;
+    private Long accountId;
 
     private BigDecimal balance;
 
@@ -47,7 +47,7 @@ public abstract class Account {
     public Account() {
     }
 
-    // TODO  if (after transactionMethod is used  && balance < minimumBalance) { apply PenaltyFeeMethod)
+    //  TODO  if (after transactionMethod is used  && balance < minimumBalance) { apply PenaltyFeeMethod)
     // PenaltyfeeMethod ={banlace - penaltyFee == new Balance}
 
 
